@@ -65,7 +65,6 @@ export const StyledLogo = styled.img`
   max-width: 100%;
   transition: width 0.5s;
   transition: height 0.5s;
-  margin-top: 1em;
 `;
 
 export const StyledImg = styled.img`
@@ -89,7 +88,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click BUY to mint your First Reapers Summons.`);
+  const [feedback, setFeedback] = useState(`Click SUMMON to mint your First Reapers Summons.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -143,22 +142,6 @@ function App() {
       });
   };
 
-  const decrementMintAmount = () => {
-    let newMintAmount = mintAmount - 1;
-    if (newMintAmount < 1) {
-      newMintAmount = 1;
-    }
-    setMintAmount(newMintAmount);
-  };
-
-  const incrementMintAmount = () => {
-    let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
-    }
-    setMintAmount(newMintAmount);
-  };
-
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
@@ -191,7 +174,6 @@ function App() {
         ai={"center"}
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
       >
-        <StyledLogo alt={"First Reapers Summons"} src={"/logo.jpg"} />
         <ResponsiveWrapper flex={1} style={{ padding: "0 24" }}>
           <s.SideContainer flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/samples/1.png"} />
@@ -210,6 +192,7 @@ function App() {
               border: "none"
             }}
           >
+            <StyledLogo alt={"First Reapers Summons"} src={"/logo.jpg"} />
             <s.TextDescription
               style={{
                 textAlign: "center",
@@ -222,7 +205,19 @@ function App() {
                 style={{
                   marginTop: "1em",
                 }}
-              >First Reapers Summons Description.
+              >Introducing the first airdrop for all our Reaper Holders. While Dragons are a majority of the pieces in this set, don't be surprised if you find yourself minting some new reapers, or custom 3D creations!
+              </p>
+              <p
+                style={{
+                  marginTop: "1em",
+                }}
+              >For every reaper you hold, you have been granted one potential mint. When minting starts, reaper holders can mint one summon at a time until all First Reapers Summons are gone. With such a limited supply of summons in this collection, you don't want to miss out on this summoning.
+              </p>
+              <p
+                style={{
+                  marginTop: "1em",
+                }}
+              >Good luck Reaper Gang!
               </p>
             </s.TextDescription>
             <s.TextTitle
@@ -331,40 +326,6 @@ function App() {
                     <s.SpacerMedium />
                     {new Date() > new Date(CONFIG.LAUNCH_DATE) ? (
                       <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                        <StyledRoundButton
-                          style={{ lineHeight: 0.4 }}
-                          disabled={claimingNft ? 1 : 0}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            decrementMintAmount();
-                          }}
-                        >
-                          -
-                        </StyledRoundButton>
-                        <s.SpacerMedium />
-                        <s.TextDescription
-                          style={{
-                            textAlign: "center",
-                            color: "var(--accent-text)",
-                          }}
-                        >
-                          {mintAmount}
-                        </s.TextDescription>
-                        <s.SpacerMedium />
-                        <StyledRoundButton
-                          disabled={claimingNft ? 1 : 0}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            incrementMintAmount();
-                          }}
-                        >
-                          +
-                        </StyledRoundButton>
-                      </s.Container>
-                    ) : null}
-                    <s.SpacerSmall />
-                    {new Date() > new Date(CONFIG.LAUNCH_DATE) ? (
-                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
                         <StyledButton
                           disabled={claimingNft ? 1 : 0}
                           onClick={(e) => {
@@ -373,7 +334,7 @@ function App() {
                             getData();
                           }}
                         >
-                          {claimingNft ? "BUSY" : "BUY"}
+                          {claimingNft ? "BUSY" : "SUMMON"}
                         </StyledButton>
                       </s.Container>
                     ) : (
@@ -397,7 +358,6 @@ function App() {
                 <Completionist />
               </Countdown>
             </div>
-            <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge />
           <s.SideContainer flex={1} jc={"center"} ai={"center"}>
