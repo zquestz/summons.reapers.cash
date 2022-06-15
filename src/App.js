@@ -205,7 +205,7 @@ function App() {
                 style={{
                   marginTop: "1em",
                 }}
-              >Introducing the first airdrop for all our Reaper Holders. While Dragons are a majority of the pieces in this set, don't be surprised if you find yourself minting some new reapers, or custom 3D creations!
+              >Introducing the first airdrop for all our reaper holders. While Dragons are a majority of the pieces in this set, don't be surprised if you find yourself minting some new reapers, or custom 3D creations!
               </p>
               <p
                 style={{
