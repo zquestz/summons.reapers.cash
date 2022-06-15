@@ -211,7 +211,7 @@ function App() {
                 style={{
                   marginTop: "1em",
                 }}
-              >For every reaper you hold, you have been granted one potential mint. When minting starts, reaper holders can mint one summon at a time until all First Reapers Summons are gone. With such a limited supply of summons in this collection, you don't want to miss out on this summoning.
+              >For every reaper you hold, you have been granted one potential mint. When minting starts, reaper holders can mint one summon at a time until all First Reapers Summons are gone. With such a limited supply of items in this collection, you don't want to miss out on this summoning.
               </p>
               <p
                 style={{
