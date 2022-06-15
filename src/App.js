@@ -220,6 +220,14 @@ function App() {
               >Good luck Reaper Gang!
               </p>
             </s.TextDescription>
+            <s.TextDescription
+              style={{
+                textAlign: "center",
+                color: "var(--primary-text)",
+                fontWeight: "bold"
+              }}
+            >ALLOWED SUMMONS: {data.allowList}
+            </s.TextDescription>
             <s.TextTitle
               style={{
                 textAlign: "center",
@@ -327,11 +335,14 @@ function App() {
                     {new Date() > new Date(CONFIG.LAUNCH_DATE) ? (
                       <s.Container ai={"center"} jc={"center"} fd={"row"}>
                         <StyledButton
-                          disabled={claimingNft ? 1 : 0}
+                          disabled={(claimingNft || data.allowList == 0) ? 1 : 0}
                           onClick={(e) => {
                             e.preventDefault();
                             claimNFTs();
                             getData();
+                          }}
+                          style={{
+                            cursor: (claimingNft || data.allowList == 0) ? "not-allowed" : "pointer"
                           }}
                         >
                           {claimingNft ? "BUSY" : "SUMMON"}
