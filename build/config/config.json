@@ -1,0 +1,19 @@
+{
+  "CONTRACT_ADDRESS": "0xF3f86E70484EDEa8cb7a029E448501A76759604D",
+  "SCAN_LINK": "https://www.smartscan.cash/address/0xF3f86E70484EDEa8cb7a029E448501A76759604D",
+  "NETWORK": {
+    "NAME": "SmartBCH",
+    "SYMBOL": "BCH",
+    "ID": 10000
+  },
+  "NFT_NAME": "Reapers First Summon",
+  "SYMBOL": "FRS",
+  "MAX_SUPPLY": 1111,
+  "WEI_COST": 0,
+  "DISPLAY_COST": 0,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Oasis",
+  "MARKETPLACE_LINK": "https://oasis.cash/collection/0xF3f86E70484EDEa8cb7a029E448501A76759604D",
+  "SHOW_BACKGROUND": false,
+  "LAUNCH_DATE": "2022-06-16T17:00:00.000-08:00"
+}

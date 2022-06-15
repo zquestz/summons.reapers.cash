@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-reapers-summons
+  namespace: default
+spec:
+  ports:
+    - port: 290
+      targetPort: 80
+  selector:
+    service: first-reapers-summons
+  type: NodePort

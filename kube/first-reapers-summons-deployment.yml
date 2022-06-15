@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    service: first-reapers-summons
+  name: first-reapers-summons
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      service: first-reapers-summons
+  template:
+    metadata:
+      labels:
+        service: first-reapers-summons
+    spec:
+      containers:
+      - image: zquestz/summons.reapers.cash:latest
+        imagePullPolicy: Always
+        name: first-reapers-summons
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "8Mi"
+      restartPolicy: Always
