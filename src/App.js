@@ -220,14 +220,6 @@ function App() {
               >Good luck Reaper Gang!
               </p>
             </s.TextDescription>
-            <s.TextDescription
-              style={{
-                textAlign: "center",
-                color: "var(--primary-text)",
-                fontWeight: "bold"
-              }}
-            >ALLOWED SUMMONS: {data.allowList}
-            </s.TextDescription>
             <s.TextTitle
               style={{
                 textAlign: "center",
@@ -270,6 +262,15 @@ function App() {
               </>
             ) : (
               <>
+                <s.TextDescription
+                  style={{
+                    textAlign: "center",
+                    color: "var(--primary-text)",
+                    fontWeight: "bold"
+                  }}
+                >ALLOWED SUMMONS: {data.allowList}
+                </s.TextDescription>
+                <s.SpacerXSmall />
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
